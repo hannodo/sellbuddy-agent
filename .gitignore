@@ -1,0 +1,10 @@
+.sellbuddy-agent/
+.agents/
+.claude/
+.env
+.env.*
+photos/
+private/
+*.zip
+__pycache__/
+.DS_Store

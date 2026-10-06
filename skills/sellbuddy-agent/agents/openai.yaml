@@ -1,0 +1,4 @@
+interface:
+  display_name: "SellBuddy"
+  short_description: "Anzeigen, Anfragen und Abholungen organisieren"
+  default_prompt: "Nutze $sellbuddy-agent und führe mich durch die Ersteinrichtung."

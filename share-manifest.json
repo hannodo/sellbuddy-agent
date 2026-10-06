@@ -1,0 +1,21 @@
+[
+  "README.md",
+  "LICENSE",
+  ".gitignore",
+  "share-manifest.json",
+  "docs/setup-codex.md",
+  "docs/setup-claude.md",
+  "docs/testing.md",
+  "docs/keep-awake.md",
+  "scripts/install.py",
+  "scripts/build_share.py",
+  "tests/test_package.py",
+  "skills/sellbuddy-agent/SKILL.md",
+  "skills/sellbuddy-agent/agents/openai.yaml",
+  "skills/sellbuddy-agent/references/interview.md",
+  "skills/sellbuddy-agent/references/state.md",
+  "skills/sellbuddy-agent/references/selling.md",
+  "skills/sellbuddy-agent/references/monitoring.md",
+  "skills/sellbuddy-agent/assets/config.example.json",
+  "skills/sellbuddy-agent/assets/ledger.example.json"
+]

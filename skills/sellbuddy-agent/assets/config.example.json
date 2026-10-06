@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "setup_complete": false,
+  "platform": {
+    "url": null,
+    "automation_allowed": null,
+    "rules_checked_at": null,
+    "permitted_scope": null
+  },
+  "timezone": null,
+  "goal": null,
+  "shipping": false,
+  "permissions": {
+    "read_messages": false,
+    "send_messages": false,
+    "publish_listings": false,
+    "reserve_listings": false,
+    "remove_sold_listings": false,
+    "set_initial_prices": false,
+    "reduce_prices": false,
+    "accept_counteroffers": false,
+    "leave_positive_ratings": false
+  },
+  "availability": {
+    "valid_until": null,
+    "recurring_windows": [],
+    "date_windows": [],
+    "exceptions": []
+  },
+  "privacy": {
+    "public_location": null,
+    "pickup_address": null,
+    "share_address_after_confirmed_pickup": false,
+    "share_phone": false
+  },
+  "style": {
+    "analyze_history_consent": false,
+    "summary": "Freundlich, natürlich und knapp; Begrüßung bei Erstkontakt, freundlicher Abschluss bei Absage, keine formalen Wiederholungen im laufenden Chat."
+  },
+  "price_policy": {
+    "automatic": false,
+    "interval_hours": 48,
+    "reduction_percent": null,
+    "rounding_eur": null,
+    "require_item_floor": true,
+    "counteroffer_response": "Zunächst auf Interesse zum ausgeschriebenen Preis warten und gegebenenfalls später zurückmelden."
+  },
+  "monitoring": {
+    "enabled": false,
+    "host": null,
+    "automation_id": null,
+    "days": [],
+    "local_start_times": ["09:00", "12:00", "15:00", "18:00", "21:00"],
+    "end_date": null,
+    "notification_mode": "meaningful_changes",
+    "notification_channel": "current_chat",
+    "scheduled_run_verified": false
+  }
+}
