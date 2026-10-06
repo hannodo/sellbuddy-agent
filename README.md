@@ -1,119 +1,129 @@
 # SellBuddy
 
-Ein teilbarer, deutschsprachiger Skill für private Verkäufe: Anzeigen aus Fotos
-erstellen, Anfragen beantworten, Abholungen koordinieren und Preise nach vereinbarten
-Regeln prüfen. Mit geführtem Einrichtungsinterview statt versteckter Standardvollmachten.
+Fotos machen, ein paar Angaben zum Artikel dazuschreiben und den Verkauf organisieren
+lassen: SellBuddy hilft dir beim Einstellen von Anzeigen, beantwortet Anfragen und
+stimmt Abholtermine ab. Du legst fest, welche Aufgaben der Assistent selbst übernehmen
+darf und wann er bei dir nachfragen soll.
 
-Es enthält keine persönlichen Verkaufsdaten, Fotos, Käuferkontakte oder Zugangsdaten.
-Kein offizielles Produkt eines Plattformbetreibers, von OpenAI oder von Anthropic.
-
-## Zuerst die Plattformregeln prüfen
-
-SellBuddy ist eine plattformneutrale Arbeitsanleitung, keine Freigabe zur
-Automatisierung einer bestimmten Website. Manche Verkaufsplattformen beschränken
-automatisierte Zugriffe oder das Sammeln von Inhalten und verlangen eine ausdrückliche
-Zustimmung. Ein lokaler Browser und ein eigener Account ändern diese Regeln nicht.
-Ein neutraler Projektname ist ebenfalls kein Schutz vor einem Regelverstoß.
-
-Vor Browserzugriff und regelmäßigen Checks die aktuellen Bedingungen der gewählten
-Plattform prüfen und erforderliche Erlaubnisse einholen. Unklare oder nicht erlaubte
-Automatisierung nicht starten. Stattdessen kann SellBuddy aus deinen hier bereitgestellten
-Fotos und Angaben Texte, Antwortentwürfe und eine lokale Verkaufsübersicht erstellen;
-du bedienst die Plattform dann selbst. Keine rechtliche Beratung oder Zusicherung
-einer Plattformkompatibilität.
+SellBuddy ist ein deutschsprachiger Skill für Codex und Claude Code. Nach der
+Einrichtung kennt der Assistent deine Abholzeiten, Preisvorstellungen und Wünsche
+für die Kommunikation. Eine lokale Übersicht hält fest, welche Artikel noch da
+sind und wer sich für wann angekündigt hat.
 
 ## Was du brauchst
 
-Für den Browsermodus brauchst du einen Account auf der gewählten Verkaufsplattform,
-deren Erlaubnis für die gewünschte Nutzung, einen lokalen Browser und einen Agenten, der diesen
-Browser tatsächlich bedienen kann. Empfohlene Wege:
+- Codex / ChatGPT Desktop mit lokalem Browserzugriff oder Claude Code mit
+  der Erweiterung „Claude in Chrome“.
+- Einen Account auf der Verkaufsplattform, die du verwenden möchtest.
+- Einen Rechner mit Internetverbindung, auf dem App und Browser laufen können.
 
-- Codex-/ChatGPT-Desktop-App mit lokalem Browserzugriff.
-- Claude Code mit Claude-in-Chrome-Anbindung; CLI oder geeignete lokale Desktop-Code-Umgebung.
+Die Anleitungen führen dich durch das Verbinden des Browsers und die Installation
+des Skills. Ob die Browserfunktionen bei dir verfügbar sind, hängt unter anderem
+von Tarif, Betriebssystem und App-Version ab. Für den Claude-Code-Weg im Terminal
+brauchst du keine Claude-Desktop-App.
 
-Die normalen Chatfenster ohne Browserwerkzeuge reichen nicht. Ein Cloud-Browser
-ist kein verlässlicher Ersatz für dein lokales eingeloggtes Profil. Dass jeder
-Cloud-Browser generell gesperrt wird, wird hier nicht behauptet.
-Claude Desktop ist für den dokumentierten Claude-Code-CLI-Weg nicht erforderlich.
-Funktionsverfügbarkeit kann von Tarif, Betriebssystem, App-Version und Organisation abhängen.
+Prüfe vor dem Start die Regeln deiner Verkaufsplattform. Automatisierte Zugriffe
+können eingeschränkt sein oder eine Zustimmung des Betreibers erfordern. Falls
+die Erlaubnis unklar ist, kannst du SellBuddy zunächst für Anzeigen- und
+Antwortentwürfe aus deinen eigenen Fotos und Angaben verwenden und die Plattform
+selbst bedienen.
 
-## In vier Schritten starten
+## So richtest du es ein
 
-1. Über **Code → Download ZIP** herunterladen und entpacken (oder das Repository
-   mit Git klonen). Dann die passende Anleitung öffnen:
-   [Codex / ChatGPT Desktop](docs/setup-codex.md) oder [Claude Code](docs/setup-claude.md).
-2. Einen separaten Ordner für deine Verkäufe anlegen, etwa „Meine-Verkaeufe“.
-   Dort den Skill installieren; dieser Ordner enthält später private Daten und wird
-   nicht weitergegeben. Installation funktioniert auch ohne Python per Ordnerkopie.
-3. Plattformregeln klären, gegebenenfalls Browser verbinden, selbst auf der gewählten
-   Verkaufsplattform anmelden und den Skill starten:
-   Codex: `$sellbuddy-agent`; Claude Code: `/sellbuddy-agent`.
-4. Das Interview beantworten und die Zusammenfassung bestätigen.
-   Ein manueller Test kommt vor jeder regelmäßigen Automatisierung.
+1. Lade das Repository über **Code → Download ZIP** herunter und entpacke es.
+   Wenn du Git nutzt, kannst du es auch klonen.
+2. Folge der Anleitung für
+   [Codex / ChatGPT Desktop](docs/setup-codex.md) oder
+   [Claude Code](docs/setup-claude.md). Lege dabei einen eigenen Ordner für deine
+   Verkäufe an, zum Beispiel „Meine-Verkaeufe“.
+3. Verbinde für den Browsermodus deinen lokalen Browser und melde dich selbst
+   auf der Verkaufsplattform an.
+4. Starte den Skill mit `$sellbuddy-agent` in Codex oder `/sellbuddy-agent`
+   in Claude Code.
 
-Startnachricht:
+Du kannst mit dieser Nachricht beginnen:
 
-> Nutze SellBuddy und führe mich durch die Ersteinrichtung.
-> Bitte noch nichts veröffentlichen oder versenden, bevor wir die Freigaben festgelegt haben.
+> Führe mich durch die Einrichtung von SellBuddy. Ich möchte zuerst festlegen,
+> was du für mich übernehmen darfst.
 
-## Was im Interview festgelegt wird
+## Deine Regeln für den Verkauf
 
-Ziel (schnell loswerden oder Erlös), Abholzeiten und Ausnahmen, Versand,
-Datenschutz, Autonomie je Aktion, Preisuntergrenzen, Verhandlungen,
-Kommunikationsstil, Benachrichtigungen und optional ein Zeitplan.
-Historische eigene Nachrichten werden zur Stilanalyse nur nach gesonderter Zustimmung gelesen.
-Ohne Analyse ist der Stil freundlich und knapp, ohne steife Wiederholungen.
+Der Assistent fragt dich Schritt für Schritt:
 
-Empfehlung: fünf Checks pro Tag um 09, 12, 15, 18 und 21 Uhr statt alle 20 Minuten.
-Jeder Start benötigt Nutzungsvolumen; die tatsächliche Menge hängt von Tarif,
-Verläufen und Werkzeugen ab. Nachts standardmäßig keine Starts.
-Du kannst jederzeit sagen: „Automatisierung pausieren.“
+- Möchtest du möglichst schnell Platz schaffen oder einen guten Preis erzielen?
+- Wann kann jemand etwas abholen? Bietest du auch Versand an?
+- Welche Nachrichten darf er selbst beantworten, welche Anzeigen veröffentlichen?
+- Darf er Preise senken, und wo liegt deine Untergrenze?
+- Wie oft soll er nach neuen Anfragen schauen und dich informieren?
 
-## Grenzen und Sicherheit
+Du bekommst anschließend eine Zusammenfassung zur Bestätigung. Für den ersten
+Versuch empfiehlt sich eine Anzeige als Entwurf und ein Nachrichtencheck unter
+deiner Aufsicht. So kannst du prüfen, ob alles zu deinen Vorstellungen passt.
 
-Ein Skill ist eine Arbeitsanleitung, kein technischer Schutzmechanismus und kein
-ständig laufender Dienst. Er installiert keinen Browserzugriff und erteilt keine
-Plattformrechte. Ein eingerichteter Zeitplan funktioniert nur unter den Bedingungen
-des jeweiligen Hosts. Rechner/App müssen für lokale Ausführung verfügbar sein.
-Schlafmodus, Rechteabfragen und Anmeldeablauf können einen Lauf verhindern.
-Konkrete Einstellungen und ein Funktionstest stehen unter
-[Rechner wach halten: macOS und Windows](docs/keep-awake.md).
+Der übliche Ton ist freundlich und kurz. Wenn du möchtest, kann der Assistent
+mit deiner Zustimmung einige deiner bisherigen eigenen Nachrichten lesen und
+sich an deinem Schreibstil orientieren.
 
-Der Agent soll Zuordnung und Ergebnisse prüfen, kann aber Fehler machen.
-Starte im Entwurfsmodus und teste insbesondere Käuferzuordnung und Reservierungen.
-Ein Artikel wird erst nach tatsächlicher Terminvereinbarung reserviert;
-pro Artikel gibt es nur einen bestätigten Abholer.
-Verfügbarkeit muss aktuell und begrenzt sein, Preiszyklen brauchen eine Untergrenze.
-Keine garantierten Verkäufe und keine Garantie für Plattformzulässigkeit:
-prüfe die für dich geltenden Verkaufsplattform-Regeln.
+## Im Alltag
 
-Ein eigenes Browserprofil begrenzt den Zugriff auf andere Accounts.
-Passwörter und Cookies nicht exportieren. Logins und CAPTCHA selbst erledigen.
-App-Berechtigungen möglichst auf benötigte Seiten und Aktionen begrenzen.
-Eine Modellanweisung ersetzt diese technischen Berechtigungen nicht.
+Schicke Fotos und eine kurze Beschreibung des nächsten Artikels. Wichtige Angaben
+sind Zustand, Größe oder Maße, Zubehör und bekannte Mängel. SellBuddy bereitet
+die Anzeige vor und veröffentlicht sie, wenn du das freigegeben hast.
 
-## Paket weitergeben und weiterentwickeln
+Bei Anfragen orientiert sich der Assistent an deinen Abholzeiten. Sobald eine
+Abholung vereinbart ist, kann er den Artikel reservieren und weitere Interessenten
+auf die Warteliste setzen. Pro Artikel bleibt es bei einer bestätigten Abholung.
+Sag ihm nach der Übergabe kurz Bescheid, damit er die Anzeige und offene Gespräche
+abschließen kann.
 
-Zum Weitergeben genügt der Link zum Repository. GitHub bietet unter
-**Code → Download ZIP** bereits ein automatisch erzeugtes Quellcodearchiv an;
-ein zusätzliches ZIP im Repository ist deshalb nicht nötig.
-[GitHub-Anleitung](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives).
-Deinen privaten Verkaufsordner niemals mit weitergeben.
-[Datenschutz und Tests](docs/testing.md) beschreibt die Freigabeprüfung.
-`share-manifest.json` enthält eine explizite Dateiliste für ein optionales Offline-ZIP:
-neu hinzugefügte Dateien werden nicht automatisch aufgenommen.
+Kontrolliere gerade am Anfang die Zuordnung der Chats und die zugesagten Termine.
+Auch mit einer Verkaufsübersicht kann der Assistent Fehler machen.
 
-Nur falls du ein separates Offline-Paket benötigst, mit Python 3.9 oder neuer im Paketordner:
+## Regelmäßige Checks
 
-```sh
-python3 scripts/build_share.py --output ../sellbuddy-agent.zip
-```
+Als sparsamen Einstieg empfehlen sich fünf Checks täglich: um 09, 12, 15, 18
+und 21 Uhr. Häufigere Checks verbrauchen mehr Nutzungsvolumen, auch wenn niemand
+geschrieben hat. Wie viel ein Lauf benötigt, hängt vom Tarif, den Verläufen und
+den verwendeten Werkzeugen ab. Häufigkeit und Benachrichtigungen kannst du im
+Interview anpassen.
 
-Eine bestehende Zieldatei wird nicht überschrieben.
-Das Paket steht unter der [MIT-Lizenz](LICENSE). Die Lizenz erteilt keine
-Nutzungsrechte an Verkaufsplattformen und ersetzt keine erforderliche Betreiberzustimmung.
-Vor Weiterveröffentlichung Quellen/Anleitungen aktualisieren und Datenschutzprüfung wiederholen.
+Während der geplanten Checks muss dein Rechner **eingeschaltet und wach** sein.
+App und Browser müssen verfügbar bleiben; bei Claude Code im Terminal auch die
+Sitzung. Zuklappen, Ruhezustand, ein Neustart oder ein abgelaufener Login können
+die Checks unterbrechen.
+[So stellst du macOS und Windows dafür ein](docs/keep-awake.md).
 
-Stand der Einrichtungsanleitungen: 6. Oktober 2026.
-Technisch validiert; nicht auf einem fremden Account oder auf beiden Hosts
-durchgehend live getestet. Änderungen an App-Oberflächen können Anpassungen erfordern.
+Teste den ersten geplanten Lauf. Zum Anhalten genügt der Auftrag:
+
+> Automatisierung pausieren.
+
+Prüfe anschließend, ob der Zeitplan in der App tatsächlich pausiert ist.
+
+## Deine Daten
+
+Die Einstellungen und die Verkaufsübersicht werden in deinem Verkaufsordner
+gespeichert. Dieser Ordner kann Käuferdaten und Abholadressen enthalten und sollte
+privat bleiben. Wenn du SellBuddy weiterempfiehlst, teile einfach den Link zu diesem
+Repository.
+
+Ein eigenes Browserprofil hilft, den Zugriff auf andere Accounts zu begrenzen.
+Gib nur die benötigten Browserrechte frei und erledige Login und CAPTCHA selbst.
+Passwörter und Cookies gehören weder in den Chat noch in die Verkaufsübersicht.
+
+## Hinweise und Weiterentwicklung
+
+SellBuddy ist ein unabhängiges Projekt. Prüfe die aktuellen Bedingungen deiner
+Verkaufsplattform und hole erforderliche Erlaubnisse ein. Das Projekt gibt keine
+rechtliche Einschätzung zur Zulässigkeit eines konkreten Einsatzes.
+
+Das Paket steht unter der [MIT-Lizenz](LICENSE). Du kannst es anpassen und
+weitergeben. Unter [Datenschutz und Tests](docs/testing.md) findest du die
+Testfälle und Hinweise für eigene Änderungen.
+
+GitHub bietet bereits einen
+[ZIP-Download der Quelldateien](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives).
+Für ein separates Offline-Paket gibt es zusätzlich `scripts/build_share.py`;
+es nimmt nur die Dateien aus `share-manifest.json` auf.
+
+Stand der Anleitungen: 6. Oktober 2026. Die Offline-Tests wurden ausgeführt;
+ein vollständiger Live-Test auf beiden Systemen steht noch aus.
